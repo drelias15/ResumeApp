@@ -62,15 +62,18 @@ public class Experience {
 
 
 
-    public void diplayDescription(){
+    public String diplayDescription(){
+        StringBuilder sb = new StringBuilder();
+        int counter = 0;
         for (int i = 0; i < descriptionList.size(); i++) {
-            System.out.println(descriptionList.get(i).toString());
+            sb.append("\t -Duty " + counter++ +", "+ descriptionList.get(i));
         }
+        return sb.toString();
     }
 
     @Override
     public String toString() {
         return "Experience \n" + jobTitle + "\n" + company + ", " + startDate + "-" + endDate + "\n"
-                + displayDescription();
+                + diplayDescription();
     }
 }

@@ -19,6 +19,6 @@ public class Description {
 
     @Override
     public String toString() {
-        return "\t-Duty: " + duty + "\n";
+        return  duty;
     }
 }
