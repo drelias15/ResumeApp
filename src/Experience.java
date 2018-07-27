@@ -1,3 +1,4 @@
+import java.awt.print.Book;
 import java.util.ArrayList;
 
 public class Experience {
@@ -63,17 +64,27 @@ public class Experience {
 
 
     public String diplayDescription(){
-        StringBuilder sb = new StringBuilder();
-        int counter = 0;
+       // StringBuilder sb = new StringBuilder();
+        String result = "";
+        int counter = 1;
         for (int i = 0; i < descriptionList.size(); i++) {
-            sb.append("\t -Duty " + counter++ +", "+ descriptionList.get(i));
+            result += " -Duty" + counter++ + ", " + descriptionList.get(i) + "\n";
         }
-        return sb.toString();
+        return result;
     }
+
+//    public String  print(ArrayList<Description> descriptionList) {
+//        String result = "+"
+//        for (int i = 0; i < descriptionList.size(); i++) {
+//            System.out.println(descriptionList.get(i));
+//        }
+//    }
+////
+
 
     @Override
     public String toString() {
-        return "Experience \n" + jobTitle + "\n" + company + ", " + startDate + "-" + endDate + "\n"
+        return jobTitle + "\n" + company + ", " + startDate + "-" + endDate + "\n"
                 + diplayDescription();
     }
 }

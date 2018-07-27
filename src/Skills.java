@@ -29,6 +29,6 @@ public class Skills {
 
     @Override
     public String toString() {
-        return "Skills \n" + skillName + ", " + rating;
+        return skillName + ", " + rating;
     }
 }

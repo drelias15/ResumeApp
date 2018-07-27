@@ -48,6 +48,6 @@ public class Education {
 
     @Override
     public String toString() {
-        return "Education \n" + degree + " in " + major + ", \n" + universityName + ", " + year  ;
+        return  degree + " in " + major + ", \n" + universityName + ", " + year  ;
     }
 }

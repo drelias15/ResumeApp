@@ -18,7 +18,7 @@ public class ResumeApp {
 
         String input = "";
 
-        while (!input.equalsIgnoreCase("q")) {
+        while (!input.equalsIgnoreCase("view")) {
             String input2 = "";
             String input3 = "";
             String input4 = "";
@@ -36,13 +36,13 @@ public class ResumeApp {
             }
 
             while (!input3.equalsIgnoreCase("next")) {
-                printer("What is your degree ");
+                printer("What is your degree? Write AS, BS or MS. ");
                 degree = keyboard.next();
-                printer("What is your major ");
+                printer("What is your major?");
                 major = keyboard.next();
-                printer("What is your university ");
+                printer("What is the name of your University?");
                 university = keyboard.next();
-                printer("What is your year of graduation ");
+                printer("What is your year of graduation?");
                 year = keyboard.nextInt();
 
                 educationList.add(new Education(degree, major, university, year));
@@ -66,7 +66,7 @@ public class ResumeApp {
 
                     printer("What is your duty?");
                     duty = keyboard.next();
-                    printer("Write description of the job?");
+                    printer("Write description of the duty?");
                     description = keyboard.next();
                     descriptionList.add(new Description(duty, description));
                     printer("Do you still want to add more? type yes if not type next to continue");
@@ -87,27 +87,27 @@ public class ResumeApp {
 
                 skillsList.add(new Skills(skillName, rating));
 
-                System.out.println("Type next when done");
+                System.out.println("Do you still want to add another skill? If yest type yes, if not type next.");
                 input5 = keyboard.next();
             }
-            System.out.println("press q when done");
+            System.out.println("Type view to populate your resume.");
             input = keyboard.next();
         }
-        printer("=======================================================================================================");
+        printer("=======================================================================");
         for (int i = 0; i < nameList.size(); i++) {
             System.out.println(nameList.get(i).toString());
         }
-        printer("\n");
+        printer(" \nEducation");
 
         for (int i = 0; i < educationList.size(); i++) {
             System.out.println(educationList.get(i).toString());
         }
-        printer("\n");
+        printer("\nExperience ");
 
         for (int i = 0; i < experienceList.size(); i++) {
             System.out.println(experienceList.get(i).toString());
         }
-        printer("\n");
+        printer("\nSkills");
         for (int i = 0; i < skillsList.size(); i++) {
             System.out.println(skillsList.get(i).toString());
         }
