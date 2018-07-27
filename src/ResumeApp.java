@@ -31,7 +31,7 @@ public class ResumeApp {
 
                 nameList.add(new Personal(name, email));
 
-                System.out.println("Type next when done");
+                System.out.println("Type next to enter your education.");
                 input2 = keyboard.next();
             }
 
@@ -47,11 +47,11 @@ public class ResumeApp {
 
                 educationList.add(new Education(degree, major, university, year));
 
-                System.out.println("Type next when done");
+                System.out.println("Do you still want to add another education? If yes type yes if not type next to enter your experience.");
                 input3 = keyboard.next();
             }
             while (!input4.equalsIgnoreCase("next")) {
-               String duty;
+               String duty, description;
                 ArrayList<Description> descriptionList = new ArrayList<Description>();
                 String input6 =  "";
                 printer("What is your Job title ");
@@ -64,23 +64,25 @@ public class ResumeApp {
                 endDate = keyboard.next();
                 while(!input6.equalsIgnoreCase("next")){
 
-                    printer("What is your job description");
+                    printer("What is your duty?");
                     duty = keyboard.next();
-                    descriptionList.add(new Description(duty));
-                    printer("Do you still want to add more? type yes if not type next");
+                    printer("Write description of the job?");
+                    description = keyboard.next();
+                    descriptionList.add(new Description(duty, description));
+                    printer("Do you still want to add more? type yes if not type next to continue");
                     input6 = keyboard.next();
                 }
 
 
                 experienceList.add(new Experience(jobTitle, company, startDate, endDate, descriptionList));
 
-                System.out.println("Type next when done");
+                System.out.println("Do you still want to add experience? If yes yes type yes if not type next to continue to your skills.");
                 input4 = keyboard.next();
             }
             while (!input5.equalsIgnoreCase("next")) {
                 printer("Add a skill ");
                 skillName = keyboard.next();
-                printer("What is your level of proficiency ");
+                printer("What is your level of proficiency?");
                 rating = keyboard.next();
 
                 skillsList.add(new Skills(skillName, rating));
